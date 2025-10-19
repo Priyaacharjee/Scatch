@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {registerUser} = require('../controllers/authController')
+const {registerUser,loginUser,logoutUser} = require('../controllers/authController');
 
 
 router.get("/", function (req, res) {
@@ -9,6 +9,9 @@ router.get("/", function (req, res) {
 
 router.post("/register",registerUser);
 
-// PRIYA start doing from login route,everything before that is done
+router.post("/login",loginUser);
+
+router.post("/logout",logoutUser);
+
 
 module.exports = router;
